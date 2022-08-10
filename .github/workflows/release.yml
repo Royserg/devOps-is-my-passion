@@ -44,7 +44,7 @@ jobs:
 
             return data.id
 
-  build-tauri:
+  build-app:
     needs: create-draft-release
     strategy:
       fail-fast: false
@@ -55,10 +55,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.9.0
+
       - name: Setup node
         uses: actions/setup-node@v1
         with:
           node-version: 16.15
+          cache: 'pnpm'
 
       - name: Install Rust stable
         uses: actions-rs/toolchain@v1
