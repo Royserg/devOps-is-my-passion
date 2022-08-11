@@ -25,7 +25,7 @@ jobs:
           node-version: 16.15
 
       - name: Get version
-        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")" >> $GITHUB_ENV
 
       - name: Create draft release
         id: create-draft-release
