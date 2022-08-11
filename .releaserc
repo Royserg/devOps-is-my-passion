@@ -5,7 +5,7 @@
     },
     {
       "name": "main",
-      "prerelease": "rc"
+      "channel": "pre-release"
     }
   ],
   "debug": "true",
@@ -30,10 +30,9 @@
       {
         "assets": [
           "package.json",
-          "CHANGELOG.md",
-          ".VERSION"
+          "CHANGELOG.md"
         ],
-        "message": "chore(release): prepare release v${nextRelease.version}"
+        "message": "chore(release): create v${nextRelease.version}"
       }
     ]
   ]
