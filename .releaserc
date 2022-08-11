@@ -5,7 +5,7 @@
     },
     {
       "name": "main",
-      "prerelease": true
+      "prerelease": "rc"
     }
   ],
   "debug": "true",
@@ -30,9 +30,10 @@
       {
         "assets": [
           "package.json",
-          "CHANGELOG.md"
+          "CHANGELOG.md",
+          ".VERSION"
         ],
-        "message": "version bump"
+        "message": "chore(release): prepare release v${nextRelease.version}"
       }
     ]
   ]
