@@ -5,8 +5,7 @@
     },
     {
       "name": "main",
-      "channel": "rc",
-      "prerelease": "rc"
+      "prerelease": "true"
     }
   ],
   "debug": "true",
