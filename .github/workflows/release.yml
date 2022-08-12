@@ -25,12 +25,17 @@ jobs:
           node-version: 16.15
 
       - name: Get version
-        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")" >> $GITHUB_ENV
+        run: |
+          echo "PACKAGE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")" >> $GITHUB_ENV &&
+          sed -i 's/..\/package.json/$process.env.PACKAGE_VERSION/g' "src-tauri/tauri.conf.json" &&
+          echo $process.env.PACKAGE_VERSION
 
       - name: Create draft release
         id: create-draft-release
         uses: actions/github-script@v6
         with:
+          # TODO: copy release body from generated release and insert into new release
+          # OR Get reference to existing pre-release and, attach files and switch to full release :D
           script: |
             const { data } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
