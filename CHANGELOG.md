@@ -1,3 +1,10 @@
+## [0.2.1-alpha.5](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.4...v0.2.1-alpha.5) (2022-08-13)
+
+
+### Bug Fixes
+
+* **release:** update replace for mac and ubuntu ([7532330](https://github.com/Royserg/devOps-is-my-passion/commit/7532330bad5b34d93e4e4fef913b64dc0badafe3))
+
 ## [0.2.1-alpha.4](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.3...v0.2.1-alpha.4) (2022-08-13)
 
 
