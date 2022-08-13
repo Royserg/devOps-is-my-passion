@@ -1,3 +1,10 @@
+## [0.2.1-alpha.4](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.3...v0.2.1-alpha.4) (2022-08-13)
+
+
+### Bug Fixes
+
+* **release:** add replacing scripts for each platform - update app version in tauri.conf ([d600ab3](https://github.com/Royserg/devOps-is-my-passion/commit/d600ab3a45d85ecce201213a5ec089bd3e618ef2))
+
 ## [0.2.1-alpha.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.2...v0.2.1-alpha.3) (2022-08-13)
 
 
