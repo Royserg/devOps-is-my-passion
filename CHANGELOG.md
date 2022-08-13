@@ -1,3 +1,10 @@
+## [0.2.1-alpha.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.2...v0.2.1-alpha.3) (2022-08-13)
+
+
+### Bug Fixes
+
+* **release:** fix read of output from previous job ([05730e5](https://github.com/Royserg/devOps-is-my-passion/commit/05730e55a7a456f1dae0d7476e9d656de945ab40))
+
 ## [0.2.1-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.1...v0.2.1-alpha.2) (2022-08-13)
 
 
