@@ -78,15 +78,15 @@ jobs:
         run: |
           (Get-Content src-tauri/tauri.conf.json) -replace '../package.json', '$next_version' | Out-File -encoding ASCII src-tauri/tauri.conf.json
 
-      - name: Update tauri-config version number (ubuntu)
+      - name: Update tauri-config version number (macos)
         if: matrix.platform == 'macos-latest'
         run: |
-          sed -i "" 's/..\/package.json/$next_version/g' "src-tauri/tauri.conf.json"
+          sed -i "" "s/..\/package.json/$next_version/g" "src-tauri/tauri.conf.json"
 
-      - name: Update tauri-config version number (macOS)
-        if: matrix.platform == 'windows-latest'
+      - name: Update tauri-config version number (ubuntu)
+        if: matrix.platform == 'ubuntu-latest'
         run: |
-          sed -i 's/..\/package.json/$next_version/g' "src-tauri/tauri.conf.json"
+          sed -i "s/..\/package.json/$next_version/g" "src-tauri/tauri.conf.json"
       # --- Replace end ---
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
