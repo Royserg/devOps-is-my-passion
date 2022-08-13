@@ -1,3 +1,10 @@
+## [0.2.1-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.0...v0.2.1-alpha.1) (2022-08-13)
+
+
+### Bug Fixes
+
+* **release:** trigger patch release: try to update version in tauri conf ([465192f](https://github.com/Royserg/devOps-is-my-passion/commit/465192f3cc065f2ff0c5baa264db95c78ec0d5d2))
+
 # [0.2.0-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.1.0...v0.2.0-alpha.1) (2022-08-12)
 
 
