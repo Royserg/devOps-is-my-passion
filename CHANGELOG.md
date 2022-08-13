@@ -1,3 +1,10 @@
+## [0.2.1-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.1...v0.2.1-alpha.2) (2022-08-13)
+
+
+### Bug Fixes
+
+* **release:** fix spacing on line 75 ([c2b7908](https://github.com/Royserg/devOps-is-my-passion/commit/c2b79088d7bc8fffdf68d2a567107ceb678b2e26))
+
 ## [0.2.1-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.0...v0.2.1-alpha.1) (2022-08-13)
 
 
