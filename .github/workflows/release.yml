@@ -65,7 +65,7 @@ jobs:
         # platform: [macos-latest, ubuntu-latest, windows-latest]
         platform: [macos-latest]
     env:
-      next_version: ${{ steps.get_next_version.outputs.next_version }}
+      next_version: ${{ needs.create-draft-release.outputs.next_version }}
 
     runs-on: ${{ matrix.platform }}
     steps:
