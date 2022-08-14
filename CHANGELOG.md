@@ -1,3 +1,10 @@
+## [0.2.5-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.4...v0.2.5-alpha.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **test:** testing out whole workflow with draft release ([526b50e](https://github.com/Royserg/devOps-is-my-passion/commit/526b50e04ac6fd099e3f56aad9dd8b6ab6ac7b8a))
+
 ## [0.2.4](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.3...v0.2.4) (2022-08-14)
 
 
