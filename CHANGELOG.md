@@ -1,3 +1,10 @@
+## [0.2.3-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.2...v0.2.3-alpha.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **workflows:** after prod release, merge prod into main, build for all platforms ([8fbc182](https://github.com/Royserg/devOps-is-my-passion/commit/8fbc1825cbd59fedf30dfc802971499c8af65463))
+
 ## [0.2.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1...v0.2.2) (2022-08-14)
 
 
