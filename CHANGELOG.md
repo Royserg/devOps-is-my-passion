@@ -1,3 +1,10 @@
+## [0.2.1-alpha.7](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.6...v0.2.1-alpha.7) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** merge workflow - change back to using custom auth token ([06b9366](https://github.com/Royserg/devOps-is-my-passion/commit/06b93665d1b52e489d96c55596b94385892a884c))
+
 ## [0.2.1-alpha.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.5...v0.2.1-alpha.6) (2022-08-14)
 
 
