@@ -1,3 +1,10 @@
+## [0.2.1-alpha.9](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.8...v0.2.1-alpha.9) (2022-08-14)
+
+
+### Bug Fixes
+
+* **workflow:** add missing install dependencies step ([d02299e](https://github.com/Royserg/devOps-is-my-passion/commit/d02299e681b39adc6b6612ddab1881f46bfd8d5b))
+
 ## [0.2.1-alpha.8](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.7...v0.2.1-alpha.8) (2022-08-14)
 
 
