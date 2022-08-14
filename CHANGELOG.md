@@ -1,3 +1,10 @@
+## [0.2.1-alpha.8](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.7...v0.2.1-alpha.8) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** add missing `with` to github-actions script ([9f8c202](https://github.com/Royserg/devOps-is-my-passion/commit/9f8c202483488d686c2d4e8128be3fc70e971d41))
+
 ## [0.2.1-alpha.7](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.6...v0.2.1-alpha.7) (2022-08-14)
 
 
