@@ -36,13 +36,14 @@ jobs:
       - name: Get Latest Release id
         id: get_latest_release_id
         uses: actions/github-script@v6
-        script: |
-          const { data } = await github.rest.repos.getLatestRelease({
-            owner: context.repo.owner,
-            repo: context.repo.repo
-          })
+        with:
+          script: |
+            const { data } = await github.rest.repos.getLatestRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            })
 
-          return data.id
+            return data.id
 
   build-app-and-attach-to-release:
     needs: create-release
