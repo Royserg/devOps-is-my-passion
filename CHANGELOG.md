@@ -1,3 +1,10 @@
+## [0.2.1-alpha.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.5...v0.2.1-alpha.6) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** run semantic-release on production release ([366fdfb](https://github.com/Royserg/devOps-is-my-passion/commit/366fdfb3c0d8cc704d75865e76842d85b84895fd))
+
 ## [0.2.1-alpha.5](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.4...v0.2.1-alpha.5) (2022-08-13)
 
 
