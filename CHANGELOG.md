@@ -1,3 +1,11 @@
+## [0.2.4-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.3...v0.2.4-alpha.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** build only for macos, set release to draft pre-artifacts upload, and release after ([2486d71](https://github.com/Royserg/devOps-is-my-passion/commit/2486d71ae86af7d06c31372095582b3d0f00efd6))
+* **release:** merge prod -> main: checkout latest production first ([ccb6f5f](https://github.com/Royserg/devOps-is-my-passion/commit/ccb6f5f5e74282a0f064e730b1f531c004515a9c))
+
 ## [0.2.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.2...v0.2.3) (2022-08-14)
 
 
