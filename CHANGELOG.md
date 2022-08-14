@@ -1,3 +1,10 @@
+## [0.2.2-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1...v0.2.2-alpha.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **workflows:** update filenames, update checkout to v3, add ref to target latest commit for builds ([74b9e03](https://github.com/Royserg/devOps-is-my-passion/commit/74b9e03f99f9106fd99cb1e0c54ecadae0561010))
+
 ## [0.2.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.0...v0.2.1) (2022-08-14)
 
 
