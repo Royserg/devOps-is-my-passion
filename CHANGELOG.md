@@ -1,3 +1,18 @@
+## [0.2.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.0...v0.2.1) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** add missing `with` to github-actions script ([9f8c202](https://github.com/Royserg/devOps-is-my-passion/commit/9f8c202483488d686c2d4e8128be3fc70e971d41))
+* **release:** add replacing scripts for each platform - update app version in tauri.conf ([d600ab3](https://github.com/Royserg/devOps-is-my-passion/commit/d600ab3a45d85ecce201213a5ec089bd3e618ef2))
+* **release:** fix read of output from previous job ([05730e5](https://github.com/Royserg/devOps-is-my-passion/commit/05730e55a7a456f1dae0d7476e9d656de945ab40))
+* **release:** fix spacing on line 75 ([c2b7908](https://github.com/Royserg/devOps-is-my-passion/commit/c2b79088d7bc8fffdf68d2a567107ceb678b2e26))
+* **release:** merge workflow - change back to using custom auth token ([06b9366](https://github.com/Royserg/devOps-is-my-passion/commit/06b93665d1b52e489d96c55596b94385892a884c))
+* **release:** run semantic-release on production release ([366fdfb](https://github.com/Royserg/devOps-is-my-passion/commit/366fdfb3c0d8cc704d75865e76842d85b84895fd))
+* **release:** trigger patch release: try to update version in tauri conf ([465192f](https://github.com/Royserg/devOps-is-my-passion/commit/465192f3cc065f2ff0c5baa264db95c78ec0d5d2))
+* **release:** update replace for mac and ubuntu ([7532330](https://github.com/Royserg/devOps-is-my-passion/commit/7532330bad5b34d93e4e4fef913b64dc0badafe3))
+* **workflow:** add missing install dependencies step ([d02299e](https://github.com/Royserg/devOps-is-my-passion/commit/d02299e681b39adc6b6612ddab1881f46bfd8d5b))
+
 ## [0.2.1-alpha.9](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1-alpha.8...v0.2.1-alpha.9) (2022-08-14)
 
 
