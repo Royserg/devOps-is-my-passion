@@ -1,6 +1,6 @@
 {
   "name": "devops-app",
-  "version": "0.2.2-alpha.2",
+  "version": "0.2.2",
   "scripts": {
     "tauri": "tauri",
     "build": "tauri build",
