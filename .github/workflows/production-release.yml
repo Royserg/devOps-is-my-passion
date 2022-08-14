@@ -51,7 +51,7 @@ jobs:
       - name: Set latest release to draft
         uses: actions/github-script@v6
         env:
-          release_id: ${{ needs.create-release.outputs.latest_release_id }}
+          release_id: ${{ steps.get_latest_release_id.outputs.result }}
         with:
           script: |
             github.rest.repos.updateRelease({
