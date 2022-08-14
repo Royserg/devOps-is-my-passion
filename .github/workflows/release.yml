@@ -24,7 +24,9 @@ jobs:
         with:
           node-version: 16.15
 
-      # Trigger semantic-release
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile -D
+
       - name: Trigger semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
