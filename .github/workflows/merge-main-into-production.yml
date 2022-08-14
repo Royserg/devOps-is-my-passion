@@ -1,4 +1,4 @@
-name: FF Merge [Main -> Production]
+name: 'RUN: FF Merge [Main -> Production]'
 
 on: workflow_dispatch
 
@@ -10,13 +10,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          # token: ${{ secrets.DEV_OPS_BOT_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DEV_OPS_BOT_TOKEN }}
 
       - name: Merge main -> production
         env:
-          # GITHUB_TOKEN: ${{ secrets.DEV_OPS_BOT_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEV_OPS_BOT_TOKEN }}
           GIT_AUTHOR_NAME: devOpsBot
           GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
           GIT_COMMITTER_NAME: devOpsBot
