@@ -1,3 +1,10 @@
+## [0.2.2-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.2-alpha.1...v0.2.2-alpha.2) (2022-08-14)
+
+
+### Bug Fixes
+
+* **release:** fix indentation on checkout step ([5f43077](https://github.com/Royserg/devOps-is-my-passion/commit/5f4307720f5751b021f8c317256b13d818062859))
+
 ## [0.2.2-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.1...v0.2.2-alpha.1) (2022-08-14)
 
 
