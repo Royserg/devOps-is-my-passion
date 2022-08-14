@@ -48,13 +48,28 @@ jobs:
 
             return data.id
 
+      - name: Set latest release to draft
+        uses: actions/github-script@v6
+        env:
+          release_id: ${{ needs.create-release.outputs.latest_release_id }}
+        with:
+          script: |
+            github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.release_id,
+              draft: true,
+              prerelease: false
+            })
+
   build-app-and-attach-to-release:
     name: Build app & add to release
     needs: create-release
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        # platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [macos-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -93,6 +108,20 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           releaseId: ${{ needs.create-release.outputs.latest_release_id }}
+
+      - name: Publish latest release
+        uses: actions/github-script@v6
+        env:
+          release_id: ${{ needs.create-release.outputs.latest_release_id }}
+        with:
+          script: |
+            github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.release_id,
+              draft: false,
+              prerelease: false
+            })
 
   update-main-branch:
     name: Merge production -> main
