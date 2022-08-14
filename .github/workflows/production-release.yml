@@ -7,12 +7,13 @@ on:
 
 jobs:
   create-release:
+    name: Create Production release
     runs-on: ubuntu-latest
     outputs:
       latest_release_id: ${{ steps.get_latest_release_id.outputs.result }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
@@ -48,6 +49,7 @@ jobs:
             return data.id
 
   build-app-and-attach-to-release:
+    name: Build app & add to release
     needs: create-release
     strategy:
       fail-fast: false
@@ -57,7 +59,10 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+          with:
+            ref: production
+            fetch-depth: 0
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
