@@ -1,4 +1,4 @@
-name: Release
+name: Production Release
 
 on:
   push:
@@ -6,11 +6,10 @@ on:
       - production
 
 jobs:
-  create-draft-release:
+  create-release:
     runs-on: ubuntu-latest
     outputs:
-      release_id: ${{ steps.create-draft-release.outputs.result }}
-      next_version: ${{ steps.get_next_version.outputs.next_version }}
+      latest_release_id: ${{ steps.get_latest_release_id.outputs.result }}
 
     steps:
       - uses: actions/checkout@v2
@@ -25,69 +24,38 @@ jobs:
         with:
           node-version: 16.15
 
-      - name: Get version
-        id: get_next_version
-        run: |
-          echo "PACKAGE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")" >> $GITHUB_ENV
-          echo "::set-output name=next_version::$(node -p "require('./package.json').version.split('-')[0]")"
+      # Trigger semantic-release
+      - name: Trigger semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: devOpsBot
+          GIT_COMMITTER_NAME: devOpsBot
+        run: pnpm dlx semantic-release
 
-      - name: Create draft release
-        id: create-draft-release
+      # Get generated release id
+      - name: Get Latest Release id
+        id: get_latest_release_id
         uses: actions/github-script@v6
-        with:
-          # TODO: copy release body from generated release and insert into new release
-          # OR Get reference to existing pre-release and, attach files and switch to full release :D
-          script: |
-            const releasesResp = await github.rest.repos.listReleases({
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            })
+        script: |
+          const { data } = await github.rest.repos.getLatestRelease({
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          })
 
-            const { body } = releasesResp.data[0];
+          return data.id
 
-            const { data } = await github.rest.repos.createRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: `v${process.env.PACKAGE_VERSION}`,
-              name: `v${process.env.PACKAGE_VERSION}`,
-              body: body,
-              draft: true,
-              prerelease: false
-            })
-
-            return data.id
-
-  build-app:
-    needs: create-draft-release
+  build-app-and-attach-to-release:
+    needs: create-release
     strategy:
       fail-fast: false
       matrix:
         # platform: [macos-latest, ubuntu-latest, windows-latest]
         platform: [macos-latest]
-    env:
-      next_version: ${{ needs.create-draft-release.outputs.next_version }}
 
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v2
 
-      # Update tauri-config version number to contain only clean version number
-      # Windows for example fails if it contains 0.1.0-alpha.1
-      - name: Update tauri-config version number (windows)
-        if: matrix.platform == 'windows-latest'
-        run: |
-          (Get-Content src-tauri/tauri.conf.json) -replace '../package.json', '$next_version' | Out-File -encoding ASCII src-tauri/tauri.conf.json
-
-      - name: Update tauri-config version number (macos)
-        if: matrix.platform == 'macos-latest'
-        run: |
-          sed -i "" "s/..\/package.json/$next_version/g" "src-tauri/tauri.conf.json"
-
-      - name: Update tauri-config version number (ubuntu)
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          sed -i "s/..\/package.json/$next_version/g" "src-tauri/tauri.conf.json"
-      # --- Replace end ---
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
         with:
@@ -117,24 +85,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          releaseId: ${{ needs.create-draft-release.outputs.release_id }}
-
-  publish-release:
-    runs-on: ubuntu-latest
-    needs: [create-draft-release, build-app]
-
-    steps:
-      - name: Publish release
-        id: publish-release
-        uses: actions/github-script@v6
-        env:
-          release_id: ${{ needs.create-draft-release.outputs.release_id }}
-        with:
-          script: |
-            github.rest.repos.updateRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: process.env.release_id,
-              draft: false,
-              prerelease: false
-            })
+          releaseId: ${{ needs.create-release.outputs.latest_release_id }}
