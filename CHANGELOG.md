@@ -1,3 +1,10 @@
+## [0.2.7-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.6...v0.2.7-alpha.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **release:** wait with prod merge for after build images complete ([43379d7](https://github.com/Royserg/devOps-is-my-passion/commit/43379d796117e9dfbfd8029d3da2182192c0572c))
+
 ## [0.2.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.5...v0.2.6) (2022-08-23)
 
 
