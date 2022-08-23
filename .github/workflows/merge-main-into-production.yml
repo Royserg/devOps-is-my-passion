@@ -3,6 +3,10 @@ name: 'Run Merge: Main -> Production'
 on: workflow_dispatch
 
 jobs:
+  test-app-builds:
+    name: 'Test app builds'
+    uses: royserg/devOps-is-my-passion/.github/workflows/test-builds.yml@main
+
   merge-main-into-production:
     name: 'Merge main into production'
     runs-on: ubuntu-latest
