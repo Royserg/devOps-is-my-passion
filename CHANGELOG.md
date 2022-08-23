@@ -1,3 +1,17 @@
+## [0.2.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.5...v0.2.6) (2022-08-23)
+
+
+### Bug Fixes
+
+* **release:** Add reusable test-builds workflow - run before merging into prod ([2835997](https://github.com/Royserg/devOps-is-my-passion/commit/28359975f1f793628b645979697d7f33d8273fd4))
+
+## [0.2.6-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.5...v0.2.6-alpha.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **release:** Add reusable test-builds workflow - run before merging into prod ([2835997](https://github.com/Royserg/devOps-is-my-passion/commit/28359975f1f793628b645979697d7f33d8273fd4))
+
 ## [0.2.5](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.4...v0.2.5) (2022-08-14)
 
 
