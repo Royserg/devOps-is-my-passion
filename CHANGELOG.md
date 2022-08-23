@@ -1,3 +1,10 @@
+## [0.2.7-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.7-alpha.1...v0.2.7-alpha.2) (2022-08-23)
+
+
+### Bug Fixes
+
+* **test-builds:** comment windows platform - fails on pre-release version ([779e97e](https://github.com/Royserg/devOps-is-my-passion/commit/779e97ec102ee340e16a743940e7fd08710d48a8))
+
 ## [0.2.7-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.6...v0.2.7-alpha.1) (2022-08-23)
 
 
