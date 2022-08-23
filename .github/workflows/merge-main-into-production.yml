@@ -8,6 +8,7 @@ jobs:
     uses: royserg/devOps-is-my-passion/.github/workflows/test-builds.yml@main
 
   merge-main-into-production:
+    needs: [test-app-builds]
     name: 'Merge main into production'
     runs-on: ubuntu-latest
     steps:
