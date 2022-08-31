@@ -123,8 +123,73 @@ jobs:
               prerelease: false
             })
 
-  update-main-branch:
-    name: Merge production -> main
+  modify-updater-gist:
+    name: Modify updater.json gist
+    needs: [build-app-and-attach-to-release]
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: update download urls and signatures for updater gist
+        uses: actions/github-script@v6
+        env: 
+          release_id: ${{ needs.create-release.outputs.latest_release_id }}
+        with:
+          script: |
+            const { data } = await github.rest.repos.getRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: process.env.release_id
+            });
+            const { name, body, published_at, assets } = data;
+
+            
+            const linuxAsset = assets[1];
+            const linuxAssetSig = assets[2];
+            const linuxSignature = await github.request(linuxAssetSig.browser_download_url)
+            console.log(linuxSignature);
+
+            const macAsset = assets[4];
+            const macAssetSig = assets[5];
+            const macSignature = await github.request(macAssetSig.browser_download_url)
+            console.log('MAC signature', macSignature);
+
+            const winAsset = assets[8];
+            const winAssetSig = assets[9];
+            const winSignature = await github.request(winAssetSig.browser_download_url)
+            console.log('WIN signature', winSignature);
+            
+
+            const newGistContent = JSON.stringify({
+              version: name,
+              notes: body,
+              pub_date: published_at,
+              platforms: { 
+                "darwin-x86_64": {
+                  signature: macSignature.data,
+                  url: macAsset.browser_download_url,
+                },
+                "linux-x86_64": {
+                  signature: linuxSignature.data,
+                  url: linuxAsset.browser_download_url,
+                },
+                "windows-x86_64": {
+                  signature: winSignature.data,
+                  url: winAsset.browser_download_url,
+                }
+              }
+            }, null, 2);
+            
+            const testGistId = 'd62249ae2a2627b322382bd373eebfaf';
+            github.rest.gists.update({ 
+              files: {
+                "updater.json": {
+                  content: newGistContent
+                }
+              }
+            });
+
+  update-main-branch: 
+    name: Merge production -> main 
     needs: build-app-and-attach-to-release
     runs-on: ubuntu-latest
 
