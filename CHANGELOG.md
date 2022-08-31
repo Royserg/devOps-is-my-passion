@@ -1,3 +1,12 @@
+## [0.2.8](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.7...v0.2.8) (2022-08-31)
+
+
+### Bug Fixes
+
+* **docs:** just a commit to trigger patch release ([a166faa](https://github.com/Royserg/devOps-is-my-passion/commit/a166faa9f5745ab704d327dab36d78de3b9a76b2))
+* **release:** add script that updates updater.json file ([240d764](https://github.com/Royserg/devOps-is-my-passion/commit/240d764fc7e9e37953db9c1839a4d57e71c61195))
+* **release:** adjust links to assets ([018cca2](https://github.com/Royserg/devOps-is-my-passion/commit/018cca284e62dd3f80c85015bf837dc0c573b2bb))
+
 ## [0.2.8-alpha.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.2...v0.2.8-alpha.3) (2022-08-31)
 
 
