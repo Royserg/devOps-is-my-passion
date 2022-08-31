@@ -1,3 +1,10 @@
+## [0.2.8-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.7...v0.2.8-alpha.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* **release:** add script that updates updater.json file ([240d764](https://github.com/Royserg/devOps-is-my-passion/commit/240d764fc7e9e37953db9c1839a4d57e71c61195))
+
 ## [0.2.7](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.6...v0.2.7) (2022-08-23)
 
 
