@@ -1,3 +1,10 @@
+## [0.2.8-alpha.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.2...v0.2.8-alpha.3) (2022-08-31)
+
+
+### Bug Fixes
+
+* **docs:** just a commit to trigger patch release ([a166faa](https://github.com/Royserg/devOps-is-my-passion/commit/a166faa9f5745ab704d327dab36d78de3b9a76b2))
+
 ## [0.2.8-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.1...v0.2.8-alpha.2) (2022-08-31)
 
 
