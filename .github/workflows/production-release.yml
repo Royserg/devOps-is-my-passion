@@ -143,19 +143,16 @@ jobs:
             const { name, body, published_at, assets } = data;
 
             
-            const linuxAsset = assets[1];
-            const linuxAssetSig = assets[2];
-            const linuxSignature = await github.request(linuxAssetSig.browser_download_url)
+            const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
+            const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
             console.log(linuxSignature);
 
-            const macAsset = assets[4];
-            const macAssetSig = assets[5];
-            const macSignature = await github.request(macAssetSig.browser_download_url)
+            const macAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz";
+            const macSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz.sig");
             console.log('MAC signature', macSignature);
 
-            const winAsset = assets[8];
-            const winAssetSig = assets[9];
-            const winSignature = await github.request(winAssetSig.browser_download_url)
+            const winAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip";
+            const winSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip.sig")
             console.log('WIN signature', winSignature);
             
 
@@ -166,15 +163,15 @@ jobs:
               platforms: { 
                 "darwin-x86_64": {
                   signature: macSignature.data,
-                  url: macAsset.browser_download_url,
+                  url: macAsset,
                 },
                 "linux-x86_64": {
                   signature: linuxSignature.data,
-                  url: linuxAsset.browser_download_url,
+                  url: linuxAsset,
                 },
                 "windows-x86_64": {
                   signature: winSignature.data,
-                  url: winAsset.browser_download_url,
+                  url: winAsset,
                 }
               }
             }, null, 2);
