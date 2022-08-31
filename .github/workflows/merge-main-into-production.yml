@@ -3,13 +3,13 @@ name: 'Run Merge: Main -> Production'
 on: workflow_dispatch
 
 jobs:
-  test-app-builds:
-    name: 'Test app builds'
-    uses: royserg/devOps-is-my-passion/.github/workflows/test-builds.yml@main
+  # test-app-builds:
+    # name: 'Test app builds'
+    # uses: royserg/devOps-is-my-passion/.github/workflows/test-builds.yml@main
 
   merge-main-into-production:
-    needs: [test-app-builds]
     name: 'Merge main into production'
+    # needs: [test-app-builds]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
