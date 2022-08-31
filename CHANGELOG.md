@@ -1,3 +1,10 @@
+## [0.2.8-alpha.2](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.1...v0.2.8-alpha.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* **release:** adjust links to assets ([018cca2](https://github.com/Royserg/devOps-is-my-passion/commit/018cca284e62dd3f80c85015bf837dc0c573b2bb))
+
 ## [0.2.8-alpha.1](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.7...v0.2.8-alpha.1) (2022-08-31)
 
 
