@@ -1,3 +1,10 @@
+## [0.2.8-alpha.7](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.6...v0.2.8-alpha.7) (2022-09-01)
+
+
+### Bug Fixes
+
+* **updater:** decode BufferArray and insert into gist ([4e4b8cd](https://github.com/Royserg/devOps-is-my-passion/commit/4e4b8cd4e8c5809534528ad79f09b5ce30626e32))
+
 ## [0.2.8-alpha.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.5...v0.2.8-alpha.6) (2022-09-01)
 
 
