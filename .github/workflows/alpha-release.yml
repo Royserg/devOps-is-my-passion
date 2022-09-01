@@ -47,20 +47,17 @@ jobs:
           github-token: ${{ secrets.DEV_OPS_BOT_TOKEN }}
           script: |
             
-            const gists = await github.rest.gists.list();
-            console.log('GISTS', gists);
-
             const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
             const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
-            console.log(linuxSignature.data);
+            console.log('Linux signature', new TextDecoder().decode(linuxSignature.data));
 
             const macAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz";
             const macSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz.sig");
-            console.log('MAC signature', macSignature.data);
+            console.log('MAC signature', new TextDecoder().decode(macSignature.data));
 
             const winAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip";
             const winSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip.sig")
-            console.log('WIN signature', winSignature.data);
+            console.log('WIN signature', new TextDecoder().decode(winSignature.data));
             
 
             const newGistContent = JSON.stringify({
