@@ -45,6 +45,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            
+            const gists = github.rest.gists.list();
+            console.log('GISTS', gists);
+
             const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
             const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
             console.log(linuxSignature);
@@ -79,7 +83,8 @@ jobs:
             }, null, 2);
             
             const testGistId = 'd62249ae2a2627b322382bd373eebfaf';
-            github.rest.gists.update({ 
+            await github.rest.gists.update({
+              gist_id: testGistId,
               files: {
                 "updater.json": {
                   content: newGistContent
