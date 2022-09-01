@@ -52,15 +52,15 @@ jobs:
 
             const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
             const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
-            console.log(linuxSignature);
+            console.log(linuxSignature.data);
 
             const macAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz";
             const macSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz.sig");
-            console.log('MAC signature', macSignature);
+            console.log('MAC signature', macSignature.data);
 
             const winAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip";
             const winSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip.sig")
-            console.log('WIN signature', winSignature);
+            console.log('WIN signature', winSignature.data);
             
 
             const newGistContent = JSON.stringify({
