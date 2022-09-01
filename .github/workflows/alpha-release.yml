@@ -49,15 +49,15 @@ jobs:
             
             const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
             const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
-            console.log('Linux signature', new TextDecoder().decode(linuxSignature.data));
+            const linuxSigData = new TextDecoder().decode(linuxSignature.data);
 
             const macAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz";
             const macSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz.sig");
-            console.log('MAC signature', new TextDecoder().decode(macSignature.data));
+            const macSigData = new TextDecoder().decode(macSignature.data);
 
             const winAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip";
             const winSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip.sig")
-            console.log('WIN signature', new TextDecoder().decode(winSignature.data));
+            const winSigData = new TextDecoder().decode(winSignature.data);
             
 
             const newGistContent = JSON.stringify({
@@ -66,15 +66,15 @@ jobs:
               pub_date: "a date ",
               platforms: { 
                 "darwin-x86_64": {
-                  signature: macSignature.data,
+                  signature: macSigData,
                   url: macAsset,
                 },
                 "linux-x86_64": {
-                  signature: linuxSignature.data,
+                  signature: linuxSigData,
                   url: linuxAsset,
                 },
                 "windows-x86_64": {
-                  signature: winSignature.data,
+                  signature: winSigData,
                   url: winAsset,
                 }
               }
