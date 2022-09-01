@@ -1,3 +1,10 @@
+## [0.2.8-alpha.4](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.3...v0.2.8-alpha.4) (2022-09-01)
+
+
+### Bug Fixes
+
+* **udpate-gist:** add step to modify in alpha release ([a0b2111](https://github.com/Royserg/devOps-is-my-passion/commit/a0b211113e0b15a1c8d45f55fc1180f7d464b087))
+
 ## [0.2.8-alpha.3](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.2...v0.2.8-alpha.3) (2022-08-31)
 
 
