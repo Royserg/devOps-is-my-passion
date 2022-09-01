@@ -1,3 +1,10 @@
+## [0.2.8-alpha.6](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.5...v0.2.8-alpha.6) (2022-09-01)
+
+
+### Bug Fixes
+
+* **updater:** set DEV_OPS_BOT token to be used for github script ([1eccf66](https://github.com/Royserg/devOps-is-my-passion/commit/1eccf664590cee885c3ff82f656c5f165598d3ff))
+
 ## [0.2.8-alpha.5](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.4...v0.2.8-alpha.5) (2022-09-01)
 
 
