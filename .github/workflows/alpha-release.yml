@@ -34,3 +34,55 @@ jobs:
           GIT_AUTHOR_NAME: devOpsBot
           GIT_COMMITTER_NAME: devOpsBot
         run: pnpm dlx semantic-release
+
+
+  modify-updater-gist:
+    name: Modify updater.json gist
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: update download urls and signatures for updater gist
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
+            const linuxSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage.tar.gz.sig");
+            console.log(linuxSignature);
+
+            const macAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz";
+            const macSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard.app.tar.gz.sig");
+            console.log('MAC signature', macSignature);
+
+            const winAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip";
+            const winSignature = await github.request("https://github.com/Royserg/bear-board/releases/download/v1.1.1/BearBoard_1.1.1_x64_en-US.msi.zip.sig")
+            console.log('WIN signature', winSignature);
+            
+
+            const newGistContent = JSON.stringify({
+              version: "v3.3.3",
+              notes: "### Release notes huehue",
+              pub_date: "a date ",
+              platforms: { 
+                "darwin-x86_64": {
+                  signature: macSignature.data,
+                  url: macAsset,
+                },
+                "linux-x86_64": {
+                  signature: linuxSignature.data,
+                  url: linuxAsset,
+                },
+                "windows-x86_64": {
+                  signature: winSignature.data,
+                  url: winAsset,
+                }
+              }
+            }, null, 2);
+            
+            const testGistId = 'd62249ae2a2627b322382bd373eebfaf';
+            github.rest.gists.update({ 
+              files: {
+                "updater.json": {
+                  content: newGistContent
+                }
+              }
+            });
