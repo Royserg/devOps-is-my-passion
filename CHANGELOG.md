@@ -1,3 +1,10 @@
+## [0.2.8-alpha.5](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.4...v0.2.8-alpha.5) (2022-09-01)
+
+
+### Bug Fixes
+
+* **updater:** list all gists, add missing gist_id ([119a48d](https://github.com/Royserg/devOps-is-my-passion/commit/119a48d8f44756f03e3934c993cbbf511a77c54a))
+
 ## [0.2.8-alpha.4](https://github.com/Royserg/devOps-is-my-passion/compare/v0.2.8-alpha.3...v0.2.8-alpha.4) (2022-09-01)
 
 
