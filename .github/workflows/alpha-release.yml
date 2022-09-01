@@ -44,9 +44,10 @@ jobs:
       - name: update download urls and signatures for updater gist
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.DEV_OPS_BOT_TOKEN }}
           script: |
             
-            const gists = github.rest.gists.list();
+            const gists = await github.rest.gists.list();
             console.log('GISTS', gists);
 
             const linuxAsset = "https://github.com/Royserg/bear-board/releases/download/v1.1.1/bear-board_1.1.1_amd64.AppImage";
